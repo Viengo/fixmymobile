@@ -1,5 +1,8 @@
 $(document).ready(function(){
     $('[data-toggle="popover"]').popover({
-        placement : 'right'
     });
+    $('#myTab a').click(function (e) {
+        e.preventDefault();
+        $(this).tab('show');
+    })
 });

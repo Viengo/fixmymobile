@@ -11,7 +11,8 @@
 @import "base";
 
 //sprites
-
+@import "check/*.png";
+@include all-check-sprites;
 
 //fonts
 @import url(http://fonts.googleapis.com/css?family=Exo+2);
@@ -19,10 +20,10 @@
 @import "fonts/helvetica";
 
 //components
-
+@import "components/tab-arrow";
 
 //widgets
-
+@import "widgets/data";
 
 //layouts
 @import "layouts/form-menu";

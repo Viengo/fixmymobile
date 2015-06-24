@@ -1,0 +1,56 @@
+.tab-arrow {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    width: 32px;
+    height: 32px;
+    border: 1px solid rgba(#a5a5a5, 0.6);
+    @include box-shadow(inset 0px 0px 3px rgba(#969696, 1));
+    @include border-radius(50%);
+    @include background-image(radial-gradient(center, ellipse cover, rgba(199, 199, 199, 1) 0%, rgba(183, 183, 183, 1) 94%, rgba(165, 165, 165, 1) 100%));
+    @include user-select(none);
+
+    &.inactive {
+        @include opacity(0.5);
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: -1px;
+        right: -1px;
+        z-index: 10;
+        width: 32px;
+        height: 32px;
+        background-image: inline-image("../images/arrow.png");
+    }
+
+    &:nth-child(2) {
+        &::before {
+            left: 0;
+            @include transform(rotate(180deg));
+        }
+    }
+
+    &:hover, &:focus {
+        border: 1px solid rgba(#a5a5a5, 0);
+        span {
+            @include opacity(1);
+
+        }
+    }
+    span {
+        position: absolute;
+        top: -2px;
+        right: -2px;
+        z-index: 5;
+        width: 32px;
+        height: 32px;
+        @include border-radius(50%);
+        @include opacity(0);
+        @include box-shadow(inset 0px 0px 8px rgba(#a5a5a5, 1));
+        @include background-image(linear-gradient(top, rgba(253, 252, 252, 1) 16%, rgba(228, 228, 228, 1) 42%, rgba(202, 202, 202, 1) 100%));
+        @include transition-property(all);
+        @include transition-duration(200ms);
+    }
+}
