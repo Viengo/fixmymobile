@@ -1,32 +1,37 @@
 //libs
 @import "compass/reset";
 @import "compass/css3";
-@import "compass/utilities/sprites";
 @import "lib/bootstrap/bootstrap";
+@import "lib/select2/select2";
 
 //mixins
+@import "mixins/placeholder";
 @import "mixins/user-select";
 @import "mixins/breakpoints";
 
 @import "base";
 
-//sprites
-@import "check/*.png";
-@include all-check-sprites;
-
 //fonts
 @import url(http://fonts.googleapis.com/css?family=Exo+2);
+@import url(http://fonts.googleapis.com/css?family=Arvo:700);
 @import "fonts/footlightMT";
 @import "fonts/helvetica";
 
 //components
 @import "components/tab-arrow";
+@import "components/select";
+@import "components/checkbox-style";
+@import "components/send";
 
 //widgets
 @import "widgets/data";
+@import "widgets/repair";
+@import "widgets/finish";
+@import "widgets/time-date";
+@import "widgets/wrapper";
 
 //layouts
-@import "layouts/form-menu";
+@import "layouts/service-form";
 
 
 

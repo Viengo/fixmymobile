@@ -6,179 +6,264 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="client/styles/css/index.css">
-    <!--<link rel="shortcut icon" href="client/images/icons/favicon.ico">-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="client/scripts/moment.js"></script>
     <script src="client/scripts/bootstrap.min.js"></script>
+    <script src="client/lib/select2/select2.js"></script>
+    <script src="client/scripts/bootstrap-datatimepiker.js"></script>
     <script src="client/scripts/index.js"></script>
 </head>
 <body>
-<section class="form-menu">
-    <button class="btn btn-warning" type="button" data-toggle="modal" data-target="#myModal">Click</button>
-    <div class="modal modal-style" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-header">
-            <a href="javascript:void(0)" type="button" class="close" data-dismiss="modal" aria-hidden="true">×</a>
-            <h3 id="myModalLabel">Your informations</h3>
-        </div>
-        <div class="modal-body">
-            <div class="tab-navigator">
-                <a class="tab-arrow inactive" href="javascript: void(0)"><span></span></a>
-                <a class="tab-arrow" href="javascript: void(0)"><span></span></a>
-            <ul id="myTab">
-                <li class="active"><a href="#data">Data</a></li>
-                <li><a href="#repair">Repair</a></li>
-                <li><a href="#finish">Finish</a></li>
-            </ul>
+<section class="service-form">
+<button class="btn btn-warning" type="button" data-toggle="modal" data-target="#myModal">Click</button>
+<div class="modal modal-style" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true">
+<div class="modal-header">
+    <a href="javascript:void(0)" type="button" class="close" data-dismiss="modal" aria-hidden="true"></a>
+
+    <h3 id="myModalLabel">Your informations</h3>
+</div>
+<div class="modal-body">
+<div class="tab-navigator clearfix">
+    <a class="tab-arrow inactive" href="javascript: void(0)"><span></span></a>
+    <ul id="myTab">
+        <li class="active"><a href="#data">Data</a></li>
+        <li><a href="#repair">Repair</a></li>
+        <li><a href="#finish">Finish</a></li>
+    </ul>
+    <a class="tab-arrow" href="javascript: void(0)"><span></span></a>
+</div>
+<div class="tab-content tab-wrapper">
+<div class="tab-pane active data" id="data">
+    <form action="/" method="post" name="user-data" class="inner-content">
+        <div class="wrapper error">
+            <p>Full name</p>
+
+            <div class="help">
+                <input type="text" name="full-name" required/>
+                <a href="javascript:void(0)"
+                   data-toggle="popover" data-trigger="click"
+                   data-placement="right" data-content="Error: incorrect full name.">?</a>
             </div>
-            <div class="tab-content">
-                <div class="tab-pane active data" id="data">
-                    <form action="/" method="post" class="clearfix">
-                        <div class="input-wrapper error">
-                            <p>Full name</p>
-                            <input type="text"/>
-                            <a href="javascript:void(0)" data-toggle="popover" data-trigger="focus click" data-placement="right"
-                               data-content="Mauris condimentum nunc eu libero">?</a>
-                        </div>
-                        <div class="input-wrapper">
-                            <p>Company</p>
-                            <input type="text"/>
-                        </div>
-                        <div class="input-wrapper">
-                            <p>Email</p>
-                            <input type="email"/>
-                        </div>
-                        <div class="input-wrapper">
-                            <p>State</p>
-                            <input type="text"/>
-                        </div>
-                        <div class="input-wrapper">
-                            <p>Postcode</p>
-                            <input type="text"/>
-                        </div>
-                        <div class="input-wrapper">
-                            <p>Suburb</p>
-                            <input type="text"/>
-                        </div>
-                        <div class="input-wrapper">
-                            <p>Address line 1</p>
-                            <input type="text"/>
-                        </div>
-                        <div class="input-wrapper">
-                            <p>Address line 2</p>
-                            <input type="text"/>
-                        </div>
-                    </form>
-                    <form action="/" method="post" class="clearfix">
-                        <div class="input-wrapper">
-                            <p>Mobile phone</p>
-                            <input type="tel"/>
-                        </div>
-                        <div class="input-wrapper">
-                            <p>Landline Phone</p>
-                            <input type="tel"/>
-                        </div>
-                        <div class="input-wrapper">
-                            <p>Brand of the phone</p>
-                            <input type="email"/>
-                        </div>
-                        <div class="input-wrapper">
-                            <p>Phone model</p>
-                            <input type="text"/>
-                        </div>
-                        <div class="input-wrapper">
-                            <p>Carrier</p>
-                            <input type="text"/>
-                        </div>
-                        <div class="input-wrapper">
-                            <p>Passcode <span>(PIN or other code to unlock phone)</span></p>
-                            <input type="password"/>
-                        </div>
-                        <div class="input-wrapper">
-                            <p>IMEI number <span>(or serial number for tablets)</span></p>
-                            <input type="text"/>
-                        </div>
-                        <div class="input-wrapper clearfix">
-                            <p>Want a free phone <br/><small>while his is being repaired</small></p>
-                            <label><input type="checkbox"/><span></span></label>
-                        </div>
-                    </form>
-                </div>
-                <div class="tab-pane" id="repair">
-                    <form action="/" method="post" class="clearfix">
-                        <div class="input-wrapper">
-                            <p>Full name</p>
-                            <input type="text"/>
-                            <a href="javascript:void(0)" data-toggle="popover" data-trigger="focus click" data-placement="right"
-                               data-content="Mauris condimentum nunc eu libero">?</a>
-                        </div>
-                        <div class="input-wrapper">
-                            <p>Company</p>
-                            <input type="text"/>
-                        </div>
-                        <div class="input-wrapper">
-                            <p>Email</p>
-                            <input type="email"/>
-                        </div>
-                        <div class="input-wrapper">
-                            <p>State</p>
-                            <input type="text"/>
-                        </div>
-                        <div class="input-wrapper">
-                            <p>Postcode</p>
-                            <input type="text"/>
-                        </div>
-                        <div class="input-wrapper">
-                            <p>Suburb</p>
-                            <input type="text"/>
-                        </div>
-                        <div class="input-wrapper">
-                            <p>Address line 1</p>
-                            <input type="text"/>
-                        </div>
-                        <div class="input-wrapper">
-                            <p>Address line 2</p>
-                            <input type="text"/>
-                        </div>
-                    </form>
-                    <form action="/" method="post" class="clearfix">
-                        <div class="input-wrapper">
-                            <p>Mobile phone</p>
-                            <input type="tel"/>
-                        </div>
-                        <div class="input-wrapper">
-                            <p>Landline Phone</p>
-                            <input type="tel"/>
-                        </div>
-                        <div class="input-wrapper">
-                            <p>Brand of the phone</p>
-                            <input type="email"/>
-                        </div>
-                        <div class="input-wrapper">
-                            <p>Phone model</p>
-                            <input type="text"/>
-                        </div>
-                        <div class="input-wrapper">
-                            <p>Carrier</p>
-                            <input type="text"/>
-                        </div>
-                        <div class="input-wrapper">
-                            <p>Passcode</p>
-                            <input type="password"/>
-                        </div>
-                        <div class="input-wrapper">
-                            <p>IMEI number <span>(or serial number for tablets)</span></p>
-                            <input type="text"/>
-                        </div>
-                        <div class="input-wrapper">
-                            <p>Want a free phone</p>
-                            <input type="checkbox"/>
-                        </div>
-                    </form>
-                </div>
-                <div class="tab-pane" id="finish">
+        </div>
+        <div class="wrapper">
+            <p>Company</p>
+            <input type="text" name="company"/>
+        </div>
+        <div class="wrapper">
+            <p>Email</p>
+            <input type="email" name="email" required/>
+        </div>
+        <div class="wrapper">
+            <p>State</p>
+            <select>
+                <option value=" "></option>
+                <option value="AL">Utah</option>
+                <option value="AL">Alaska</option>
+                <option value="AL">Problem</option>
+                <option value="AL">Problem</option>
+            </select>
+        </div>
+        <div class="wrapper">
+            <p>Postcode</p>
+            <input type="text" name="postcode" required/>
+        </div>
+        <div class="wrapper">
+            <p>Suburb</p>
+            <select>
+                <option value=" "></option>
+                <option value="AL">Suburb2</option>
+                <option value="AL">Suburb3</option>
+                <option value="AL">Problem</option>
+                <option value="AL">Problem</option>
+            </select>
+        </div>
+        <div class="wrapper">
+            <p>Address line 1</p>
+            <input type="text" name="address-1" required/>
+        </div>
+        <div class="wrapper">
+            <p>Address line 2</p>
+            <input type="text" name="address-2" required/>
+        </div>
+    </form>
+    <form action="/" method="post" name="phone-data" class="inner-content">
+        <div class="wrapper">
+            <p>Mobile phone</p>
+            <input type="tel" name="tel-number" required/>
+        </div>
+        <div class="wrapper">
+            <p>Landline Phone</p>
+            <input type="tel" name="tel-number-2"/>
+        </div>
+        <div class="wrapper">
+            <p>Brand of the phone</p>
+            <input type="text" name="brand" required/>
+        </div>
+        <div class="wrapper">
+            <p>Phone model</p>
+            <input type="text" name="phone-model" required/>
+        </div>
+        <div class="wrapper">
+            <p>Carrier</p>
+            <input type="text" name="carrier" required/>
+        </div>
+        <div class="wrapper">
+            <p>Passcode <span>(PIN or other code to unlock phone)</span></p>
+            <input type="password" name="passcode" required/>
+        </div>
+        <div class="wrapper">
+            <p>IMEI number <span>(or serial number for tablets)</span></p>
+            <input type="text" name="imei" required/>
+        </div>
+        <div class="wrapper">
+            <p>Want a free phone <br/><small>while his is being repaired</small></p>
+            <label class="checkbox-style">
+                <input type="checkbox" required/>
+                <span></span>
+            </label>
+        </div>
+    </form>
+</div>
+<div class="tab-pane repair" id="repair">
+    <form action="/" method="post" name="service" class="inner-content">
+        <div class="select-open">
+            <div class="wrapper">
+                <p>List of the accessories</p>
+                <select class="search">
+                    <option value="AL">Accessories</option>
+                    <option value="AL">Accessories</option>
+                    <option value="AL">Accessories</option>
+                    <option value="AL">Accessories</option>
+                    <option value="AL">Accessories</option>
+                </select>
+            </div>
+            <div class="wrapper">
+                <p>List of the problems</p>
+                <select class="search">
+                    <option value="AL">Problem</option>
+                    <option value="AL">Problem</option>
+                    <option value="AL">Problem</option>
+                    <option value="AL">Problem</option>
+                    <option value="AL">Problem</option>
+                </select>
+            </div>
+        </div>
+        <h4>How you want to give phone</h4>
+
+        <div class="wrapper">
+            <select>
+                <option value="AL"></option>
+                <option value="AL">Drop in at store</option>
+                <option value="WY">Send by courier</option>
+                <option value="AL">Send by regular mail</option>
+                <option value="AL">Alabama</option>
+                <option value="WY">Wyoming</option>
+            </select>
+
+            <div class="time-date">
+                <small>Select time and date</small>
+                <div class='input-group date input-group-style' id='datetimepicker1'>
+                    <input type='text' tabindex="-1" class="form-control select-date"/>
+                    <span class="input-group-addon calendar"></span>
                 </div>
             </div>
         </div>
+        <div class="wrapper">
+            <select class="disabled" disabled>
+                <option value=" "></option>
+                <option value="AL">Alabama</option>
+                <option value="WY">Wyoming</option>
+            </select>
+        </div>
+        <h4>How you want to get the phone back</h4>
+
+        <div>
+            <div class="wrapper">
+                <select>
+                    <option value=" "></option>
+                    <option value="AL">Drop in at store</option>
+                    <option value="WY">Send by courier</option>
+                    <option value="AL">Send by regular mail</option>
+                    <option value="AL">Alabama</option>
+                    <option value="WY">Wyoming</option>
+                </select>
+
+                <div class="time-date">
+                    <small>Select time and date</small>
+                    <div class='input-group date input-group-style' id='datetimepicker2'>
+                        <input type='text' tabindex="-1" class="form-control select-date"/>
+                        <span class="input-group-addon calendar"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wrapper">
+                <select class="disabled" disabled>
+                    <option value=" "></option>
+                    <option value="AL">Alabama</option>
+                    <option value="WY">Wyoming</option>
+                </select>
+            </div>
+        </div>
+        <h3>How did you hear about <a href="javascript:void(0)">Fix <span>My</span> Mobile</a>?</h3>
+        <ul>
+            <li>Google<label class="checkbox-style"><input type="checkbox"/><span></span></label></li>
+            <li>Radio advertisement<label class="checkbox-style"><input type="checkbox"/><span></span></label></li>
+            <li>Friends<label class="checkbox-style"><input type="checkbox"/><span></span></label></li>
+            <li>TV<label class="checkbox-style"><input type="checkbox"/><span></span></label></li>
+            <li>Press<label class="checkbox-style"><input type="checkbox"/><span></span></label></li>
+        </ul>
+        <h4>Additional comments</h4>
+        <textarea name="comment"></textarea>
+    </form>
+</div>
+<div class="tab-pane finish inner-content" id="finish">
+    <div class="results">
+        <a href="#data"></a>
+        <ul>
+            <li>Full name</li>
+            <li>Postcode</li>
+            <li>Company</li>
+            <li>Suburb</li>
+            <li>Email</li>
+            <li>Address line 1</li>
+            <li>State</li>
+            <li>Address line 2</li>
+        </ul>
     </div>
+    <div class="results">
+        <a href="#data"></a>
+        <ul>
+            <li>Mobile phone</li>
+            <li>Carrier</li>
+            <li>Landline phone</li>
+            <li>Passcode</li>
+            <li>Brand of the phone</li>
+            <li>IMEI number</li>
+            <li>Phone model</li>
+            <li>Yes, I want a free phone.</li>
+        </ul>
+    </div>
+    <div class="results">
+        <a href="#repair"></a>
+        <ul>
+            <li>List of accessories</li>
+            <li>List of the problems</li>
+            <li>How ypu want to give phone:</li>
+            <li>How you want to get the phone back:</li>
+
+        </ul>
+    </div>
+    <div class="send-box">
+        <p>I read and understood terms and conditions</p>
+        <label class="checkbox-style"><input type="checkbox"/><span></span></label>
+        <a href="javascript:void(0)" type="button" class="btn btn-default send">Send</a>
+    </div>
+</div>
+</div>
+</div>
+</div>
 </section>
 </body>
 </html>

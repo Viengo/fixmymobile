@@ -1,0 +1,110 @@
+.repair {
+
+    form {
+        position: relative;
+        margin: 30px auto 0;
+        padding: 8px 5px 18px;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: -24px;
+            right: 44.5%;
+            display: block;
+            width: 42px;
+            height: 36px;
+            background: inline-image("../images/content-icons/cogwheel.png");
+            background-repeat: no-repeat;
+
+        }
+        .select-open{
+            padding-bottom: 95px; /*temporarily class*/
+        }
+
+        .time-date{
+            margin-top: 4px;
+
+            .input-group-style {
+                margin-left: 5px;
+            }
+
+            small {
+                vertical-align: top;
+                font-size: 10px;
+                line-height: 15px;
+            }
+
+            .disabled{
+                @include breakpoint(extra-small){
+                    margin-top: 10px;
+                }
+            }
+        }
+
+        h4{
+            margin: 18px 3px 0;
+            font-size: 17px;
+            @include breakpoint(extra-small){
+                text-align: center;
+            }
+        }
+
+        h3 {
+            margin: 23px 3px 0;
+            font-size: 17px;
+
+            a {
+                font-family: "Arvo";
+                font-weight: bold;
+                color: #050000;
+
+                span {
+                    color: #295cac;
+                }
+            }
+        }
+
+        ul {
+            margin: 13px 3px 0;
+            font-size: 0;
+            text-align: left;
+
+            li {
+                display: inline-block;
+                margin-left: 10px;
+                font-size: 15px;
+                @include breakpoint(extra-small) {
+                    display: block;
+                    margin-left: 0;
+                }
+
+                &:first-child {
+                    margin-left: 0;
+                }
+
+                .checkbox-style{
+                    margin-left: 3px;
+                    vertical-align: bottom;
+                }
+            }
+        }
+
+        textarea {
+            display: block;
+            width: 100%;
+            height: 78px;
+            margin-top: 5px;
+            padding: 10px;
+            border: 2px solid #d0d0d1;
+            outline: none;
+            font-family: "Exo 2";
+            font-size: 15px;
+            resize: none;
+            @include border-radius(8px);
+            @include placeholder {
+                font-family: "Exo 2";
+                font-size: 15px;
+            }
+        }
+    }
+}

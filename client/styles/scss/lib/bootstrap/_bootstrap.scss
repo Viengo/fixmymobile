@@ -24,6 +24,7 @@
 @import "core/buttons";
 
 // Components
+//@import "components/glyphicons";
 @import "bootstrap/component-animations";
 //@import "components/dropdowns";
 //@import "bootstrap/button-groups";
@@ -46,6 +47,7 @@
 @import "components/close";
 
 // Components w/ JavaScript
+@import "js/datepicker";
 @import "js/modals";
 //@import "js/tooltip";
 @import "js/popovers";

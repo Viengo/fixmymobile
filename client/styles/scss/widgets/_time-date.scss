@@ -1,0 +1,123 @@
+.time-date {
+    display: block;
+    padding: 0 4px;
+    font-size: 0;
+
+    .input-group-style {
+        display: inline-block;
+
+        .select-date {
+            display: inline-block;
+            width: 93px;
+            height: 15px;
+            margin: 0;
+            padding: 0 5px;
+            font-size: 9px;
+            @include border-radius(3px);
+        }
+
+        .calendar {
+            display: inline-block;
+            width: 16px;
+            height: 15px;
+            margin-left: 5px;
+            padding: 0;
+            vertical-align: top;
+            border: none;
+            background-image: url("../../images/calendar-2.png");
+            background-repeat: no-repeat;
+            cursor: pointer;
+            @include border-radius(3px);
+        }
+    }
+}
+
+.bootstrap-datetimepicker-widget, .dropdown-menu {
+    left: 30%;
+    overflow: hidden;
+    z-index: 1500;
+    display: none;
+    width: 125px;
+    margin: 2px 0 0;
+    list-style: none;
+    font-size: 9px;
+    background-color: #ffffff;
+    border: 1px solid #97bfff;
+    @include box-shadow(0 6px 12px rgba(0, 0, 0, 0.175));
+    @include border-radius(8px 8px 6px 6px);
+
+    .datepicker {
+        padding: 0;
+
+        table {
+            td, th {
+                width: 41px;
+                height: 14px;
+                @include border-radius(0);
+            }
+            thead {
+                tr {
+                    &:first-child {
+                        background-color: #4975b6;
+                        font-family: "Exo 2";
+
+                        th {
+                            height: 14px;
+                            color: #ffffff;
+
+                            &:hover {
+                                background-color: #3060a7;
+                            }
+
+                            &.prev {
+                                @include border-radius(0 0 0 8px);
+                            }
+
+                            &.next {
+                                @include border-radius(0 0 8px 0);
+                            }
+
+                        }
+                    }
+
+                    &:nth-child(2) {
+                        border-top: 3px solid #ffffff;
+                        border-right: 5px solid #ffffff;
+                        border-left: 5px solid #ffffff;
+
+                        th {
+                            background-color: #d8e7ff;
+
+                            &:last-child {
+                                color: #3a87ff;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        tbody {
+            font-family: "FootlightMT";
+
+            tr {
+                td {
+                    &.active {
+                        background-color: #ffffff;
+                        color: #000000;
+                        border: 2px solid #3a87ff;
+                        &:hover {
+                            background-color: #ffffff;
+                            color: #000000;
+                            border: 2px solid #3a87ff;
+                        }
+                    }
+
+                    &:last-child {
+                        color: #3a87ff;
+                    }
+                }
+            }
+        }
+    }
+}
