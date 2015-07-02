@@ -16,7 +16,7 @@
 <body>
 <section class="service-form">
 <button class="btn btn-warning" type="button" data-toggle="modal" data-target="#myModal">Click</button>
-<div class="modal modal-style" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+<div class="modal fade modal-style" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
      aria-hidden="true">
 <div class="modal-header">
     <a href="javascript:void(0)" type="button" class="close" data-dismiss="modal" aria-hidden="true"></a>
@@ -34,7 +34,7 @@
     <a class="tab-arrow" href="javascript: void(0)"><span></span></a>
 </div>
 <div class="tab-content tab-wrapper">
-<div class="tab-pane active data" id="data">
+<div class="tab-pane fade in active data" id="data">
     <form action="/" method="post" name="user-data" class="inner-content">
         <div class="wrapper error">
             <p>Full name</p>
@@ -125,7 +125,7 @@
         </div>
     </form>
 </div>
-<div class="tab-pane repair" id="repair">
+<div class="tab-pane fade repair" id="repair">
     <form action="/" method="post" name="service" class="inner-content">
         <div class="select-open">
             <div class="wrapper">
@@ -218,7 +218,7 @@
         <textarea name="comment"></textarea>
     </form>
 </div>
-<div class="tab-pane finish inner-content" id="finish">
+<div class="tab-pane fade finish inner-content" id="finish">
     <div class="results">
         <a href="#data"></a>
         <ul>

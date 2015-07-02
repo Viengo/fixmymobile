@@ -5420,13 +5420,12 @@ h2, h3, h4, p, li {
   line-height: 15px;
 }
 @media (max-width: 767px) {
-  .repair form .time-date .disabled {
+  .repair form .disabled {
     margin-top: 10px;
   }
 }
 .repair form h4 {
   margin: 18px 3px 0;
-  font-size: 17px;
 }
 @media (max-width: 767px) {
   .repair form h4 {
@@ -5435,7 +5434,6 @@ h2, h3, h4, p, li {
 }
 .repair form h3 {
   margin: 23px 3px 0;
-  font-size: 17px;
 }
 .repair form h3 a {
   font-family: "Arvo";
