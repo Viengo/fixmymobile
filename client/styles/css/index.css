@@ -5004,7 +5004,6 @@ h2, h3, h4, p, li {
 
 .tab-arrow {
   position: relative;
-  top: 1px;
   display: inline-block;
   width: 32px;
   height: 32px;
@@ -5742,7 +5741,7 @@ h2, h3, h4, p, li {
 }
 .wrapper.error .help {
   position: relative;
-  width: 225px;
+  width: 100%;
 }
 @media (max-width: 767px) {
   .wrapper.error .help {
