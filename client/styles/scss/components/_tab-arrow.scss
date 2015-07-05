@@ -28,8 +28,8 @@
     &::before{
         content: "";
         z-index: 10;
-        background-image: url("../../images/arrow.png");
         background-repeat: no-repeat;
+        @include icons-sprite(arrow);
     }
 
     &:last-child {

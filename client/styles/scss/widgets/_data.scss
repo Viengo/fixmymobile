@@ -2,7 +2,7 @@
 
     form {
         position: relative;
-        margin: 30px auto 0;
+        margin: auto 0;
         padding: 8px 5px 18px;
 
         &::before {
@@ -13,14 +13,14 @@
             display: block;
             width: 20px;
             height: 38px;
-            background: inline-image("../images/content-icons/man.png");
             background-repeat: no-repeat;
+            @include content-icons-sprite(man);
         }
 
         &:nth-child(2) {
             &::before {
-                background: inline-image("../images/content-icons/mobile.png");
-                background-repeat: no-repeat;
+                height: 34px;
+                @include content-icons-sprite(mobile);
             }
 
             .wrapper {

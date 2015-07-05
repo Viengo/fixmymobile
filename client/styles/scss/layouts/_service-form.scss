@@ -27,12 +27,12 @@
                 width: 16px;
                 height: 16px;
                 background-color: #969696;
-                background-image: url("../../images/close.png");
                 background-repeat: no-repeat;
                 font-family: "sans-serif";
                 font-size: 12px;
                 opacity: 1;
                 line-height: 15px;
+                @include icons-sprite(close);
                 @include border-radius(50%);
                 @include user-select(none);
                 @include transition-property(background-color);
@@ -132,17 +132,21 @@
                     }
                 }
             }
+
             .tab-wrapper {
-                padding: 0 29px 22px;
+                padding: 29px 29px 22px;
 
                 .inner-content {
-                    margin-top: 29px;
                     border: 2px dotted #a1a0a0;
                     background-color: #eff0f2;
                     font-size: 0;
                     text-align: left;
                     @include border-radius(3px);
                     @include user-select(none);
+
+                    &:nth-child(2){
+                        margin-top: 29px;
+                    }
                     @include breakpoint(extra-small){
                         text-align: center;
                     }

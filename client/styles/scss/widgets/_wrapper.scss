@@ -3,7 +3,7 @@
     width: 50%;
     vertical-align: top;
     font-size: 0;
-    @include breakpoint(extra-small){
+    @include breakpoint(extra-small) {
         width: 100%;
     }
 
@@ -18,7 +18,7 @@
         .help {
             position: relative;
             width: 100%;
-            @include breakpoint(extra-small){
+            @include breakpoint(extra-small) {
                 margin: 0 auto;
             }
 
@@ -31,12 +31,9 @@
                 height: 20px;
                 border: 1px solid #3a87ff;
                 background-color: #eff0f2;
-                font-family: "HelveticaCE Regular";
-                font-size: 15px;
-                line-height: 15px;
-                text-align: center;
-                color: #3a87ff;
+                background-repeat: no-repeat;
                 @include border-radius(50%);
+                @include icons-sprite(error);
             }
 
             a + .popover {

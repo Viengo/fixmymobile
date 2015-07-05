@@ -1,6 +1,7 @@
 //libs
 @import "compass/reset";
 @import "compass/css3";
+@import "compass/utilities/sprites";
 @import "lib/bootstrap/bootstrap";
 @import "lib/select2/select2";
 
@@ -11,11 +12,15 @@
 
 @import "base";
 
+//sprites
+@import "check/*.png";
+@import "content-icons/*.png";
+@import "icons/*.png";
+
 //fonts
 @import url(http://fonts.googleapis.com/css?family=Exo+2);
 @import url(http://fonts.googleapis.com/css?family=Arvo:700);
 @import "fonts/footlightMT";
-@import "fonts/helvetica";
 
 //components
 @import "components/tab-arrow";

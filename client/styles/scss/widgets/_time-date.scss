@@ -24,9 +24,9 @@
             padding: 0;
             vertical-align: top;
             border: none;
-            background-image: url("../../images/calendar-2.png");
             background-repeat: no-repeat;
             cursor: pointer;
+            @include icons-sprite(calendar-2);
             @include border-radius(3px);
         }
     }

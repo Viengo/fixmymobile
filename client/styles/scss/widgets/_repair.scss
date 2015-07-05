@@ -2,7 +2,7 @@
 
     form {
         position: relative;
-        margin: 30px auto 0;
+        margin: auto 0;
         padding: 8px 5px 18px;
 
         &::before {
@@ -13,8 +13,8 @@
             display: block;
             width: 42px;
             height: 36px;
-            background: inline-image("../images/content-icons/cogwheel.png");
             background-repeat: no-repeat;
+            @include content-icons-sprite(cogwheel);
 
         }
         .select-open {
